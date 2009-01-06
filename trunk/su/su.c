@@ -1,7 +1,4 @@
 /*
-**
-** Copyright 2008, The Android Open Source Project
-**
 ** Licensed under the Apache License, Version 2.0 (the "License"); 
 ** you may not use this file except in compliance with the License. 
 ** You may obtain a copy of the License at 
@@ -30,7 +27,7 @@
 
 #include <sqlite3.h>
 
-#define DBPATH "/data/data/koushikdutta.superuser/databases/superuser.sqlite"
+#define DBPATH "/data/data/com.koushikdutta.superuser/databases/superuser.sqlite"
 
 static int g_puid;
 
@@ -126,7 +123,7 @@ int main(int argc, char **argv)
 	if (!checkWhitelist())
 	{
 		char sysCmd[1024];
-		sprintf(sysCmd, "am start -a android.intent.action.MAIN -n koushikdutta.superuser/koushikdutta.superuser.SuperuserRequestActivity --ei uid %d --ei pid %d > /dev/null", g_puid, ppid);
+		sprintf(sysCmd, "am start -a android.intent.action.MAIN -n com.koushikdutta.superuser/com.koushikdutta.superuser.SuperuserRequestActivity --ei uid %d --ei pid %d > /dev/null", g_puid, ppid);
 		if (system(sysCmd))
 			return executionFailure("am.");
 
