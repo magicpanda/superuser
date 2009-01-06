@@ -61,8 +61,8 @@ public class SuperuserRequestActivity extends Activity
 				int read = reader.read(buff, 0, buff.length);
 				String str = new String(buff);
 				int id = mUid - 10000;
-				String pattern = String.format("app_%d+(.*?)\n", id);
-				Pattern regex = Pattern.compile(pattern);
+				String pattern = String.format("^app_%d+\\s(.*?)\n", id);
+				Pattern regex = Pattern.compile(pattern, Pattern.MULTILINE);
 				Matcher match = regex.matcher(str);
 				mName = "";
 				while (match.find())
