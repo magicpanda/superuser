@@ -1,0 +1,1 @@
+Superuser provides a sudo-style interface that notifies you whenever an application needs to perform an operation that requires root access.
